@@ -4,11 +4,11 @@ html, body {
     background-color: #121212;
     font-family: 'Inter', sans-serif;
     color: white;
+    width: 550px;
 }
 
 /* Header styling */
 header {
-    width: 550px;
     height: 210px;
     overflow: hidden;
 }
@@ -56,14 +56,14 @@ header {
     height:40px;
 }
 
-.icon {
+.search-icon {
     position: absolute;
     left: 10px;
     top: 10px;
 }
 
 .search-input{
-    color: #a5a5a5;
+    color: grey;
     width: 342px;
     padding-left: 40px;
     font-size: 14px;
@@ -80,24 +80,80 @@ header {
     border: none;
 }
 
-/* Movie list styling */
+/* Empty Movie list styling */
 
 .film-icon {
-    position: absolute;
-    top: 438px;
-    bottom: 280px;
-    left: 240px;
-    right: 240px;
+    margin-top: 230px;
 }
 
-.start-exploring {
+.default-text {
     font-size: 18px;
     font-weight: 700;
-    color: #2e2e2f;
-    position: absolute;
-    top: 508px;
-    right: 270px;
-    bottom: 251px;
-    left: 210px;
+    color: #787878;
     margin-top: 8px;
+}
+
+/* Movie list spacing and alignment */
+.movie-list{
+    width: 500px;
+    padding: 60px 44px 0 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie, .movie-info-header, .movie-info-secondary, .add-watchlist {
+    display: flex;
+}
+
+.movie-info-header, .movie-info-secondary, .add-watchlist {
+    align-items: center;
+}
+
+.movie {
+    width: inherit;
+    padding: 20px 0;
+    border-bottom: 1px solid #2C2C2C;
+    gap: 20px;
+}
+
+.poster {
+    width: 100px;
+    height: 150px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.movie-info h2, .movie-info p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.movie-info-secondary{
+    gap: 18px;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+}
+
+/* font styling */
+.movie-info h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.movie-info-header p, .movie-info-secondary p {
+    font-size: 12px;
+}
+
+.description {
+    font-size: 14px;
+    color: #A5A5A5;
 }
