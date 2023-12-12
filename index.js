@@ -11,8 +11,6 @@ searchForm.addEventListener("submit", (e) => {
     fetch(`https://www.omdbapi.com/?apikey=306279c6&s=${searchInput.value}&type=movie`)
         .then(response => response.json())
         .then(data => updateMovieList(data.Search))
-
-    searchForm.reset()
 })
 
 function updateMovieList(movies){
@@ -23,12 +21,8 @@ function updateMovieList(movies){
     
     movieListEl.innerHTML = ""
     movies.forEach(movie => {
-        getMovieDetails(movie.Title).then(details => {
-            if (details.Poster === "N/A" || 
-                details.imdbRating === "N/A" || 
-                details.Runtimee === "N/A" || 
-                details.Genre === "N/A" || 
-                details.Plot === "N/A") 
+        getMovieDetails(movie.imdbID).then(details => {
+            if (details.Poster === "N/A" || details.imdbRating === "N/A" || details.Runtimee === "N/A" || details.Genre === "N/A" || details.Plot === "N/A") 
             {
                 return
             }
@@ -57,8 +51,8 @@ function updateMovieList(movies){
     })
 }
 
-function getMovieDetails(name) {
-    return fetch(`http://www.omdbapi.com/?apikey=306279c6&t=${name}`)
+function getMovieDetails(imdbID) {
+    return fetch(`https://www.omdbapi.com/?apikey=306279c6&i=${imdbID}`)
         .then(response => response.json())
         .then(data => {return data})
 }
