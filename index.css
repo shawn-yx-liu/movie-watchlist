@@ -1,0 +1,103 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+/* Header styling */
+header {
+    width: 550px;
+    height: 210px;
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 550px;
+    height: 210px;
+    object-fit: cover;
+    object-position: center 25%;
+    opacity: 0.3;
+}
+
+.header-content {
+    position: relative;
+    display: flex;
+    height: 210px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content h1 {
+    font-size: 43px;
+    font-weight: 800;
+    margin: 0 0 0 42px;
+}
+
+.watchlist-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: inherit;
+    text-decoration: none;
+    margin: 0 45px 0 0;
+}
+
+/* Search box styling */
+.search-form{
+    display: flex;
+    position: absolute;
+    top: 189px;
+    left: 44px;
+    right: 164px;
+    height:40px;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.search-input{
+    color: #a5a5a5;
+    width: 342px;
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+.search-btn{
+    font-size: 14px;
+    font-weight: 500;
+    color: inherit;
+    background-color: #4b4b4b;
+    border-radius: 0 6px 6px 0;
+    padding: 9px 11px 9px 17px;
+    width: 120px;
+    border: none;
+}
+
+/* Movie list styling */
+
+.film-icon {
+    position: absolute;
+    top: 438px;
+    bottom: 280px;
+    left: 240px;
+    right: 240px;
+}
+
+.start-exploring {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2e2e2f;
+    position: absolute;
+    top: 508px;
+    right: 270px;
+    bottom: 251px;
+    left: 210px;
+    margin-top: 8px;
+}

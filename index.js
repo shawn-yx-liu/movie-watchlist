@@ -1,0 +1,1 @@
+// example query: https://www.omdbapi.com/?apikey=306279c6&s=blade&type=movie
