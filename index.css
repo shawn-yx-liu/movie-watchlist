@@ -5,6 +5,7 @@ html, body {
     font-family: 'Inter', sans-serif;
     color: white;
     width: 550px;
+    margin: 0 auto;
 }
 
 /* Header styling */
@@ -16,7 +17,8 @@ header {
 .header-background {
     position: absolute;
     top: 0;
-    left: 0;
+    left: auto;
+    right: auto;
     width: 550px;
     height: 210px;
     object-fit: cover;
@@ -51,8 +53,9 @@ header {
     display: flex;
     position: absolute;
     top: 189px;
-    left: 44px;
-    right: 164px;
+    left: auto;
+    right: auto;
+    margin-left: 44px;
     height:40px;
 }
 
