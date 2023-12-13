@@ -93,6 +93,11 @@ header {
     margin-top: 8px;
 }
 
+.add-watchlist p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
 /* Movie list spacing and alignment */
 .movie-list{
     width: 500px;
@@ -141,6 +146,10 @@ header {
     width: 15px;
     height: 15px;
     margin-right: 4px;
+}
+
+.add-watchlist:hover, .search-btn {
+    cursor: pointer;
 }
 
 /* font styling */

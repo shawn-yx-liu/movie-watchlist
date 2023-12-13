@@ -1,9 +1,9 @@
-// example query: https://www.omdbapi.com/?apikey=306279c6&s=blade&type=movie
-// http://www.omdbapi.com/?t=Blade+Runner
-
 searchForm = document.getElementById("search-form")
 searchInput = document.getElementById("search-input")
 movieListEl = document.getElementById("movie-list")
+
+let movieList = []
+let watchlist = JSON.parse(localStorage.getItem('watchlist')) ?? []
 
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -13,12 +13,32 @@ searchForm.addEventListener("submit", (e) => {
         .then(data => updateMovieList(data.Search))
 })
 
+movieListEl.addEventListener("click", (e) => {
+    if (e.target.dataset.id) {
+        // add the clicked movie to the watchlist and update the icon
+        const clickedIcon = document.querySelector(`img[data-id=${e.target.dataset.id}`)
+        const idx = watchlist.findIndex(movie => movie.imdbID === e.target.dataset.id)
+
+        if (idx === -1) {
+            watchlist.push(movieList.find(movie => movie.imdbID === e.target.dataset.id))
+            clickedIcon.src = "images/remove-icon.png"
+        } else {
+            watchlist.splice(idx, 1)
+            clickedIcon.src = "images/add-icon.png"
+        }
+
+        localStorage.setItem('watchlist', JSON.stringify(watchlist))
+    }
+    console.log(e.target.dataset.id)
+})
+
 function updateMovieList(movies){
     if (!movies){
         movieListEl.innerHTML = `<h2 class="default-text">Unable to find what you're looking for. Please try another search.</h2>`
         return
     }
     
+    movieList = []
     movieListEl.innerHTML = ""
     movies.forEach(movie => {
         getMovieDetails(movie.imdbID).then(details => {
@@ -26,6 +46,11 @@ function updateMovieList(movies){
             {
                 return
             }
+            movieList.push(details)
+
+            // set the add or remove icon
+            const idx = watchlist.findIndex(movie => movie.imdbID === details.imdbID)
+            let iconSrc = idx > -1 ? "images/remove-icon.png" : "images/add-icon.png"
             movieListEl.innerHTML += `
             <div class="movie" id="movie">
                 <img class="poster" src="${details.Poster}">
@@ -38,9 +63,9 @@ function updateMovieList(movies){
                     <div class="movie-info-secondary">
                         <p>${details.Runtime}</p>
                         <p>${details.Genre}</p>
-                        <div class="add-watchlist">
-                            <img class="icon" src="images/add-icon.png">
-                            <p>Watchlist</p>
+                        <div class="add-watchlist" data-id="${details.imdbID}">
+                            <img class="icon" src=${iconSrc} data-id="${details.imdbID}">
+                            <p data-id="${details.imdbID}">Watchlist</p>
                         </div>
                     </div>
                     <p class="description">${details.Plot}</p>
