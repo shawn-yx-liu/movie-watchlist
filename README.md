@@ -1,23 +1,22 @@
-# co0a24985872b20458f37bc22
+# Movie Watchlist
+The movie watchlist is a program that allows users to search for a movie and add it to their watchlist, using the OMDB API.  I created this project as a way to practice my asynchronous JavaScript and API skills.  
 
-Quick start:
+## Getting Started
+### Build and Run the program:
 
 ```
 $ npm install
 $ npm start
 ````
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+### Usage
+* Search for a movie by its title using the centered search bar.
+* Click the "+" button to add the movie to your watchlist, or the "-" button to remove the movie from your watchlist.
+* Click "My Watchlist" in the header to navigate to your watchlist. 
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+# Authors
+* [Shawn Liu](https://github.com/shawn8913)
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+# Acknowledgements:
+* [Scrimba Frontend Career Path](https://scrimba.com/learn/frontend)
 
-Happy Coding!
-
-Skills: API, multiple pages, promises, async/await
