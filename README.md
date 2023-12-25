@@ -1,5 +1,5 @@
 # Movie Watchlist
-The movie watchlist is a program that allows users to search for a movie and add it to their watchlist, using the OMDB API.  I created this project as a way to practice my asynchronous JavaScript and API skills.
+The [movie watchlist app](https://movie-watchlist-shawnliu.netlify.app/) is a program that allows users to search for a movie and add it to their watchlist, using the OMDB API.  I created this project as a way to practice my asynchronous JavaScript and API skills.
 
 ### Built With
 [![Javascript][Javascript.js]][Javascript-url]\
